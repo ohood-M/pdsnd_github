@@ -5,7 +5,7 @@ Feb 2, 2021
 This project is a part of Programming for Data Science nanodegree at udacity.
 
 ### Description
-Describe what your project is about and what it does
+This project provide an interactive experience where the users is asked multiple questions and based on their answer the dataset will be filtered, Then it will show the users a descriptive statistics upon the desired city and timeframe. In addition it also display a raw data upon user request.
 
 ### Files used
 Include the files used
