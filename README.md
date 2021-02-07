@@ -23,3 +23,9 @@ _Data for first 10 rows in chicago.csv file._
 
 _Data for first 10 rows in new_york_city.csv file._
 ![new-york-dataset-file](images/screenshot-new-york.PNG)
+
+### Software requirements
+* Python version 3.8.5
+* Pandas version 0.22
+* Atom version 1.54
+* A terminal application
