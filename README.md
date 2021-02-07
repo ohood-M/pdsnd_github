@@ -12,3 +12,14 @@ Dataset files for three cities in United States the data is provided by Motivate
 * washington.csv
 * chicago.csv
 * new_york_city.csv
+
+_Data for first 10 rows in washington.csv file._
+![washington-dataset-file](images/screenshot-washington.PNG)
+
+
+_Data for first 10 rows in chicago.csv file._
+![chicago-dataset-file](images/screenshot-chicago.PNG)
+
+
+_Data for first 10 rows in new_york_city.csv file._
+![new-york-dataset-file](images/screenshot-new-york.PNG)
