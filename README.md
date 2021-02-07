@@ -8,7 +8,7 @@ This project is a part of Programming for Data Science nanodegree at udacity.
 This project provide an interactive experience where the users is asked multiple questions and based on their answer the dataset will be filtered, Then it will show the users a descriptive statistics upon the desired city and timeframe. In addition it also display a raw data upon user request.
 
 ### Files used
-Include the files used
-
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Dataset files for three cities in United States the data is provided by Motivate (a bike share system provider in US).
+* washington.csv
+* chicago.csv
+* new_york_city.csv
