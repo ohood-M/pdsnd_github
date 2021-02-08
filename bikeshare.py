@@ -34,7 +34,8 @@ def get_filters():
         try:
             month = input(
                 '\nWhich month ? January, February, March, April, May, June, or "all" to apply no month filter?\n').lower()
-            month_list = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
+            month_list = ['january', 'february',
+                          'march', 'april', 'may', 'june', 'all']
             if month in month_list:
                 break
             raise ValueError
@@ -160,11 +161,15 @@ def trip_duration_stats(df):
 
     # Display total travel time
     total_duration = df['Trip Duration'].sum()
-    print('What is the total traveling duration?\n', total_duration)
+    convrt_sec = time.strftime("%H:%M:%S", time.gmtime(total_duration))
+    print('What is the total traveling duration?\n')
+    print('The total is {} hour.'.format(convrt_sec))
 
     # Display mean travel time
     avg_duration = df['Trip Duration'].mean()
-    print('\nWhat is the average traveling duration?\n', avg_duration)
+    convrt_sec2 = time.strftime("%H:%M:%S", time.gmtime(avg_duration))
+    print('\nWhat is the average traveling duration?\n')
+    print('The average is {} hour.'.format(convrt_sec2))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -186,22 +191,23 @@ def user_stats(df):
         df.fillna(method='ffill', axis=0, inplace=True)
 
     # Display counts of gender if applicable
-    if 'Gender' in df:
+    try:
         gender_count = df['Gender'].value_counts()
         print('\nWhat is the breakdown of gender?')
         print(gender_count)
-    else:
-        print('\nWhat is the breakdown of gender?\n', 'Ther is no gender data to calculat')
+    except:
+        print('\nWhat is the breakdown of gender?\n',
+              'Ther is no gender data to calculat')
 
     # Display earliest, most recent, and most common year of birth if applicable
-    if 'Birth Year' in df:
+    try:
         early_year = df['Birth Year'].min()
         recent_year = df['Birth Year'].max()
         most_common = df['Birth Year'].mode()[0]
         print('\nWhat is the Earliest, Most recent, and Most Common year of birth?')
         print("Early year: {} \nRecent year: {} \nMost commonearly year: {} ".format(
             early_year, recent_year, most_common))
-    else:
+    except:
         print('\nWhat is the Earliest, Most recent, and Most Common year of birth?\n',
               'Ther is no birth year data to calculat')
 
@@ -213,7 +219,8 @@ def raw_data(df):
     """Displays raw data - print 5 rows each time- upon user answer."""
     # Displays 5 rows from raw data,it will continue prompting and printing until the user chooses 'no'
     strt = 0
-    raw_data = input('\nWould you like to see the raw data? Enter yes or no.\n').lower()
+    raw_data = input(
+        '\nWould you like to see the raw data? Enter yes or no.\n').lower()
     while raw_data == 'yes':
         five_row = df.iloc[strt: strt+5]
         print(five_row)
