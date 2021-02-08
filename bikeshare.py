@@ -191,11 +191,11 @@ def user_stats(df):
         df.fillna(method='ffill', axis=0, inplace=True)
 
     # Display counts of gender if applicable
-    if 'Gender' in df:
+    try:
         gender_count = df['Gender'].value_counts()
         print('\nWhat is the breakdown of gender?')
         print(gender_count)
-    else:
+    except:
         print('\nWhat is the breakdown of gender?\n',
               'Ther is no gender data to calculat')
 
