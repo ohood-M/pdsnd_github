@@ -34,7 +34,8 @@ def get_filters():
         try:
             month = input(
                 '\nWhich month ? January, February, March, April, May, June, or "all" to apply no month filter?\n').lower()
-            month_list = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
+            month_list = ['january', 'february',
+                          'march', 'april', 'may', 'june', 'all']
             if month in month_list:
                 break
             raise ValueError
@@ -191,7 +192,8 @@ def user_stats(df):
         print('\nWhat is the breakdown of gender?')
         print(gender_count)
     else:
-        print('\nWhat is the breakdown of gender?\n', 'Ther is no gender data to calculat')
+        print('\nWhat is the breakdown of gender?\n',
+              'Ther is no gender data to calculat')
 
     # Display earliest, most recent, and most common year of birth if applicable
     if 'Birth Year' in df:
@@ -213,7 +215,8 @@ def raw_data(df):
     """Displays raw data - print 5 rows each time- upon user answer."""
     # Displays 5 rows from raw data,it will continue prompting and printing until the user chooses 'no'
     strt = 0
-    raw_data = input('\nWould you like to see the raw data? Enter yes or no.\n').lower()
+    raw_data = input(
+        '\nWould you like to see the raw data? Enter yes or no.\n').lower()
     while raw_data == 'yes':
         five_row = df.iloc[strt: strt+5]
         print(five_row)
